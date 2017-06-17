@@ -3,11 +3,11 @@ define([
     "views/components/label",
     "views/components/full-info"
   ], (donut, label, fullInfo) => {
-  return (chartData) => {
-    const width = 300, height = 500,
+  return (chartData, container) => {
+    const width = 300, height = 300,
       radius = Math.min(width, height) / 2;
 
-    const svg = d3.select(".container").append("svg")
+    const svg = d3.select(container).append("svg")
       .attr("width", width)
       .attr("height", height)
       .append("g")
@@ -15,6 +15,6 @@ define([
 
     donut(svg, radius, chartData);
     label(svg, chartData);
-    fullInfo(svg, chartData);
+    fullInfo(container, chartData, width, height - width);
   }
 });

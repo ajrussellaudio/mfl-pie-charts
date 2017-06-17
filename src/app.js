@@ -32,12 +32,15 @@ require([
     document.body.appendChild(container);
 
     objects.forEach(object => {
-      buildHTML(object);
+      buildHTML(object, container);
     })
   }
 
-  function buildHTML(object) {
-    renderD3chart(object);
+  function buildHTML(object, container) {
+    const div = document.createElement("div");
+    div.className = "svg-container";
+    container.appendChild(div);
+    renderD3chart(object, div);
   }
 
 })
