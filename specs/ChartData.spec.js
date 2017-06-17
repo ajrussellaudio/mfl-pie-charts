@@ -2,8 +2,8 @@ define(['../src/models/ChartData'], (ChartData) => {
   const chartData = new ChartData({
     label: "Test",
     sources: {
-      tablet: 120,
-      smartphone: 80
+      tablet: 120000,
+      smartphone: 80000
     }
   });
 
@@ -12,14 +12,14 @@ define(['../src/models/ChartData'], (ChartData) => {
   });
 
   it("should have a total from all sources", () => {
-    expect(chartData.total()).toEqual(200);
+    expect(chartData.total()).toEqual(200000);
   });
 
   it("should have a tablet percentage", () => {
-    expect(chartData.tabletPercentage()).toEqual("60%")
+    expect(chartData.tabletPercentage()).toEqual(60)
   });
 
   it("should have a smartphone percentage", () => {
-    expect(chartData.smartphonePercentage()).toEqual("40%")
+    expect(chartData.smartphonePercentage()).toEqual(40)
   });
 })
