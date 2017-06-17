@@ -14,7 +14,7 @@ html, body {
 
 .svg-container {
   display: flex;
-  width: 25%;
+  min-width: 25%;
   flex-direction: column;
   justify-content: center;
 }
@@ -35,5 +35,24 @@ html, body {
 
 .info-box > .smartphone {
   text-align: right;
+}
+
+@media (max-width: 780px) {
+  html, body {
+    height: auto;
+  }
+
+  .container {
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  .svg-container {
+    min-width: 80%;
+  }
+
+  .info-box {
+    margin-bottom: 10vh
+  }
 }
 

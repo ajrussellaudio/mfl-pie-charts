@@ -95,3 +95,13 @@ g.visits > path.smartphone {
 .info-box > div > p > span.actual {
   color: var(--light-text-color);
 }
+
+@media (max-width: 780px) {
+  .info-box > div > h1 {
+    font-size: 3vh;
+  }
+
+  .info-box > div > p {
+    font-size: 2.5vh;
+  }
+}
