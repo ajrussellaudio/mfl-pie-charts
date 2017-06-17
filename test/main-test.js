@@ -17,5 +17,7 @@ require.config({
 
 require(['jasmine-boot'], () => {
   // require specs here
-  require(['test.spec'], window.onload)
+  require([
+    'ChartData.spec'
+  ], window.onload)
 })
