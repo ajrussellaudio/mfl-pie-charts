@@ -18,7 +18,6 @@ require.config({
 require(['jasmine-boot'], () => {
   // require specs here
   require([
-    'ChartData.spec',
-    'StringFormatter.spec'
+    'ChartData.spec'
   ], window.onload)
 })

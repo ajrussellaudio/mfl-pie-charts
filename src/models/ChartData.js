@@ -2,40 +2,39 @@ define([], () => {
   return class ChartData {
 
     constructor(data) {
+      this.locale = "es-ES";
       this.label = data.label;
-      this.data = this.extractData(data.sources)
+      this.tablet = parseInt(data.sources.tablet);
+      this.smartphone = parseInt(data.sources.smartphone);
+      this.symbol = (data.symbol || "");
     }
 
-    formattedLabel() {
-      return this.label.toUpperCase();
-    }
-
-    tablet() {
-      return this.data.find(datum => {
-        return datum.label === "tablet"
-      }).value;
+    tabletAsString() {
+      return this.tablet.toLocaleString(this.locale) + this.symbol;
     }
 
     tabletPercentage() {
-      return this.percentageOfTotal(this.tablet());
+      return this.percentageOfTotal(this.tablet);
     }
 
-    smartphone() {
-      return this.data.find(datum => {
-        return datum.label === "smartphone"
-      }).value;
+    smartphoneAsString() {
+      return this.smartphone.toLocaleString(this.locale) + this.symbol;
     }
 
     smartphonePercentage() {
-      return this.percentageOfTotal(this.smartphone());
+      return this.percentageOfTotal(this.smartphone);
     }
 
     total() {
-      return this.tablet() + this.smartphone();
+      return this.tablet + this.smartphone;
+    }
+
+    totalAsString() {
+      return this.total().toLocaleString(this.locale) + this.symbol;
     }
 
     percentageOfTotal(source) {
-      return (source / this.total()) * 100;
+      return ((source / this.total()) * 100) + "%"
     }
 
     extractData(sources) {

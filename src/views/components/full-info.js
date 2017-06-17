@@ -1,7 +1,4 @@
-define([
-  '../helpers/separateThousands',
-  '../helpers/currency'
-], (separateThousands, currency) => {
+define([], () => {
 
   return (container, chartData) => {
 
@@ -14,13 +11,13 @@ define([
     createDiv(container, {
       label: "Tablet",
       percentage: chartData.tabletPercentage(),
-      actual: chartData.tablet()
+      actual: chartData.tabletAsString()
     });
 
     createDiv(container, {
       label: "Smartphone",
       percentage: chartData.smartphonePercentage(),
-      actual: chartData.smartphone()
+      actual: chartData.smartphoneAsString()
     });
   }
 

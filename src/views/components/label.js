@@ -1,25 +1,15 @@
-define([
-  '../helpers/separateThousands',
-  '../helpers/currency'
-], (separateThousands, currency) => {
+define([], () => {
   return (svg, chartData) => {
     const label = svg.append("text")
-      .text(chartData.formattedLabel())
+      .text(chartData.label.toUpperCase())
       .attr("y", -20)
       .attr("text-anchor", "middle")
       .attr("class", "center title");
 
     const total = svg.append("text")
-      .text(prettyNumber(chartData))
+      .text(chartData.totalAsString())
       .attr("y", 15)
       .attr("text-anchor", "middle")
       .attr("class", "center total");
-  }
-
-  function prettyNumber(chartData) {
-    if (chartData.formattedLabel() === "REVENUE") {
-      return currency(chartData.total(), '€');
-    }
-    return separateThousands(chartData.total());
   }
 })

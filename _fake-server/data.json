@@ -1,21 +1,22 @@
 {
   "data": [{
     "label": "Revenue",
+    "symbol": "€",
     "sources": {
-      "tablet": 120000,
-      "smartphone": 80000
+      "tablet": "120000",
+      "smartphone": "80000"
     }
   }, {
     "label": "Impresions",
     "sources": {
-      "tablet": 20000000,
-      "smartphone": 30000000
+      "tablet": "20000000",
+      "smartphone": "30000000"
     }
   }, {
     "label": "Visits",
     "sources": {
-      "tablet": 480000000,
-      "smartphone": 120000000
+      "tablet": "480000000",
+      "smartphone": "120000000"
     }
   }]
 }

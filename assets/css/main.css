@@ -45,8 +45,6 @@ g.visits > path.smartphone {
   font-size: 28pt;
 }
 
-.pip {
-  fill: none;
-  stroke: black;
-  stroke-dasharray: 20,30;
+.svg-container {
+  display: inline;
 }
