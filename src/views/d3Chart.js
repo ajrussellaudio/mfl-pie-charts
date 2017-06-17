@@ -1,13 +1,12 @@
 define([], () => {
-  return (chartData) => {
-    const data = [chartData.smartphone, chartData.tablet];
+  return (chartData, colors) => {
 
     const width = 300,
       height = 300,
       radius = Math.min(width, height) / 2;
 
     const color = d3.scaleOrdinal()
-      .range(["#FF0000", "#00FF00"]);
+      .range(colors);
 
     const arc = d3.arc()
       .outerRadius(radius - 10)
@@ -24,7 +23,7 @@ define([], () => {
       .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
 
     const g = svg.selectAll(".arc")
-      .data(pie(data))
+      .data(pie([chartData.smartphone, chartData.tablet]))
       .enter()
       .append("g")
       .attr("class", "arc");

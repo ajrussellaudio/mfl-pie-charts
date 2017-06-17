@@ -1,7 +1,7 @@
 require([
     './models/ChartData',
     './views/d3Chart'
-  ], (ChartData, d3chart) => {
+  ], (ChartData, renderD3chart) => {
   return getData(buildCharts);
 
   function logData(data) {
@@ -37,7 +37,16 @@ require([
   }
 
   function buildHTML(object) {
-    d3chart(object);
+    renderD3chart(object, colors(object));
+  }
+
+  function colors(object) {
+    const colorPairs = {
+      revenue: ["#0c6502", "#52d123"],
+      impresions: ["#034f63", "#2bc5e2"],
+      visits: ["#d95807", "#fbc110"]
+    }
+    return colorPairs[object.label.toLowerCase()]
   }
 
 })
