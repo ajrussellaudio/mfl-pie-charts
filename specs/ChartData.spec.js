@@ -8,11 +8,11 @@ define(['../src/models/ChartData'], (ChartData) => {
     }
   });
 
-  it("can return tablet()", () => {
+  it("can return tablet value as formatted string", () => {
     expect(chartData.tabletAsString()).toEqual("120.000€");
   });
 
-  it("can return smartphone()", () => {
+  it("can return smartphone value as formatted string", () => {
     expect(chartData.smartphoneAsString()).toEqual("80.000€");
   });
 
@@ -20,8 +20,12 @@ define(['../src/models/ChartData'], (ChartData) => {
     expect(chartData.label).toEqual("Test");
   });
 
-  it("should have a total from all sources", () => {
-    expect(chartData.totalAsString()).toEqual("200.000");
+  it("should have a total from all sources as number", () => {
+    expect(chartData.total()).toEqual(200000);
+  });
+
+  it("should have a total from all sources as formatted string", () => {
+    expect(chartData.totalAsString()).toEqual("200.000€");
   });
 
   it("should have a tablet percentage", () => {
