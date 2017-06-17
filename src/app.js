@@ -1,4 +1,7 @@
-require(['./models/ChartData'], (ChartData) => {
+require([
+    './models/ChartData',
+    './views/d3Chart'
+  ], (ChartData, d3chart) => {
   return getData(buildCharts);
 
   function logData(data) {
@@ -24,25 +27,17 @@ require(['./models/ChartData'], (ChartData) => {
   }
 
   function render(objects) {
+    const container = document.createElement("div");
+    container.className = "container";
+    document.body.appendChild(container);
+
     objects.forEach(object => {
       buildHTML(object);
     })
   }
 
   function buildHTML(object) {
-
-    const wrapper = document.createElement("div");
-    wrapper.className = "wrapper";
-
-    const header = document.createElement("h1");
-    header.innerText = object.formattedLabel();
-
-    const pTag = document.createElement("p");
-    pTag.innerText = "Total: " + object.total();
-
-    wrapper.appendChild(header);
-    wrapper.appendChild(pTag);
-    document.body.appendChild(wrapper);
+    d3chart(object);
   }
 
 })
