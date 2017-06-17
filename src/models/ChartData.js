@@ -15,10 +15,6 @@ define([], () => {
       return this.tablet + this.smartphone;
     }
 
-    formattedTotal() {
-      return this.total().toString().match(/.{1,3}/g).join('.');
-    }
-
     tabletPercentage() {
       return this.percentageOfTotal(this.tablet);
     }
