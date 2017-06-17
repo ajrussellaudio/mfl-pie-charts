@@ -8,7 +8,7 @@ require(['./models/ChartData'], (ChartData) => {
   function getData(callback) {
     fetch('_fake-server/data.json')
       .then(response => {
-        if (response.ok()) {
+        if (response.ok) {
           return response.json();
         }
       }).then(json => {
