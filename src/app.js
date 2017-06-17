@@ -1,16 +1,44 @@
-require([], () => {
-  const data = getData(logData);
+require(['./models/ChartData'], (ChartData) => {
+  return getData(buildCharts);
+
+  function logData(data) {
+    console.log(data);
+  }
+
+  function getData(callback) {
+    fetch('_fake-server/data.json')
+      .then(response => {
+        return response.json();
+      }).then(json => {
+        callback(json);
+      });
+  }
+
+  function buildCharts(chartsJson) {
+    const chartsData = chartsJson.data.map(chartJson => {
+      return new ChartData(chartJson);
+    });
+    render(chartsData);
+  }
+
+  function render(objects) {
+    objects.forEach(object => {
+      buildHTML(object);
+    })
+  }
+
+  function buildHTML(object) {
+    const wrapper = document.createElement("div");
+    wrapper.className = "wrapper";
+
+    const header = document.createElement("h1");
+    header.innerText = object.formattedLabel();
+
+    wrapper.appendChild(header);
+    document.body.appendChild(wrapper);
+  }
+
 })
 
-function logData(data) {
-  console.log(data);
-}
 
-function getData(callback) {
-  fetch('_fake-server/data.json')
-    .then(response => {
-      return response.json();
-    }).then(json => {
-      callback(json);
-    });
-}
+
