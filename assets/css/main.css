@@ -40,12 +40,12 @@ g.visits > path.smartphone {
 
 .center.title {
   fill: var(--light-text-color);
-  font-size: 20pt;
+  font-size: 2.5vh;
 }
 
 .center.total {
   fill: var(--dark-text-color);
-  font-size: 28pt;
+  font-size: 3.5vh;
 }
 
 .info-box {
@@ -54,8 +54,13 @@ g.visits > path.smartphone {
 }
 
 .info-box > div > h1 {
-  font-size: 16pt;
+  font-size: 1.5vw;
   font-weight: 700;
+}
+
+.info-box > div > p {
+  font-size: 1.3vw;
+  font-weight: 400;
 }
 
 .info-box.revenue > div.tablet > h1 {
@@ -84,7 +89,7 @@ g.visits > path.smartphone {
 
 .info-box > div > p > span.percentage {
   color: var(--dark-text-color);
-  margin-right: 15px;
+  margin-right: 1vw;
 }
 
 .info-box > div > p > span.actual {
