@@ -1,32 +1,20 @@
-define([], () => {
+define([
+    "views/components/donut",
+    "views/components/label",
+    "views/components/full-info"
+  ], (donut, label, fullInfo) => {
   return (chartData) => {
-
-    const width = 300,
-      height = 300,
+    const width = 300, height = 500,
       radius = Math.min(width, height) / 2;
 
-    const arc = d3.arc()
-      .outerRadius(radius - 10)
-      .innerRadius(radius - 20);
-
-    const pie = d3.pie()
-      .sort(null)
-      .value(d => { return d.value; });
-
-    const svg = d3.select("body").append("svg")
+    const svg = d3.select(".container").append("svg")
       .attr("width", width)
       .attr("height", height)
       .append("g")
-      .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
+      .attr("transform", "translate(" + radius + "," + radius + ")")
 
-    const g = svg.selectAll(".arc")
-      .data(pie(chartData.data.reverse()))
-      .enter()
-      .append("g")
-      .attr("class", "arc " + chartData.label.toLowerCase())
-
-    g.append("path")
-      .attr("d", arc)
-      .attr("class", d => { return d.data.label });
-  };
+    donut(svg, radius, chartData);
+    label(svg, chartData);
+    fullInfo(svg, chartData);
+  }
 });

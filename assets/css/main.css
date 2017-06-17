@@ -30,3 +30,23 @@ g.visits > path.tablet {
 g.visits > path.smartphone {
   fill: var(--visits-secondary-color);
 }
+
+.center {
+  font-family: 'Open Sans', sans-serif;
+}
+
+.center.title {
+  fill: #888;
+  font-size: 24pt;
+}
+
+.center.total {
+  fill: #333;
+  font-size: 28pt;
+}
+
+.pip {
+  fill: none;
+  stroke: black;
+  stroke-dasharray: 20,30;
+}
