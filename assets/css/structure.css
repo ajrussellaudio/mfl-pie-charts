@@ -1,0 +1,23 @@
+.container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.svg-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.info-box {
+  display: flex;
+  justify-content: space-between;
+}
+
+.info-box > .tablet {
+  text-align: left;
+}
+
+.info-box > .smartphone {
+  text-align: right;
+}
+

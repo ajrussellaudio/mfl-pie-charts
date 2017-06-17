@@ -5,6 +5,8 @@
   --impresions-secondary-color: #034f63;
   --visits-primary-color: #fbc110;
   --visits-secondary-color: #d95807;
+  --dark-text-color: #383838;
+  --light-text-color: #b1b1b1;
 }
 
 g.revenue > path.tablet {
@@ -33,18 +35,58 @@ g.visits > path.smartphone {
 
 .center {
   font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
 }
 
 .center.title {
-  fill: #888;
-  font-size: 24pt;
+  fill: var(--light-text-color);
+  font-size: 20pt;
 }
 
 .center.total {
-  fill: #333;
+  fill: var(--dark-text-color);
   font-size: 28pt;
 }
 
-.svg-container {
-  display: inline;
+.info-box {
+  font-family: 'Open Sans', sans-serif;
+  border-bottom: 1px solid var(--light-text-color);
+}
+
+.info-box > div > h1 {
+  font-size: 16pt;
+  font-weight: 700;
+}
+
+.info-box.revenue > div.tablet > h1 {
+  color: var(--revenue-primary-color);
+}
+
+.info-box.revenue > div.smartphone > h1 {
+  color: var(--revenue-secondary-color);
+}
+
+.info-box.impresions > div.tablet > h1 {
+  color: var(--impresions-primary-color);
+}
+
+.info-box.impresions > div.smartphone > h1 {
+  color: var(--impresions-secondary-color);
+}
+
+.info-box.visits > div.tablet > h1 {
+  color: var(--visits-primary-color);
+}
+
+.info-box.visits > div.smartphone > h1 {
+  color: var(--visits-secondary-color);
+}
+
+.info-box > div > p > span.percentage {
+  color: var(--dark-text-color);
+  margin-right: 15px;
+}
+
+.info-box > div > p > span.actual {
+  color: var(--light-text-color);
 }

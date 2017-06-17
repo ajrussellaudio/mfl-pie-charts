@@ -2,19 +2,17 @@ define([], () => {
 
   return (container, chartData) => {
 
-    const h1Tablet = document.createElement("h1");
-    h1Tablet.innerText = "Tablet";
+    const infoBox = document.createElement("div");
+    infoBox.className = "info-box " + chartData.label.toLowerCase();
+    container.appendChild(infoBox);
 
-    const h1Smartphone = document.createElement("h1");
-    h1Smartphone.innerText = "Smartphone";
-
-    createDiv(container, {
+    createDiv(infoBox, {
       label: "Tablet",
       percentage: chartData.tabletPercentage(),
       actual: chartData.tabletAsString()
     });
 
-    createDiv(container, {
+    createDiv(infoBox, {
       label: "Smartphone",
       percentage: chartData.smartphonePercentage(),
       actual: chartData.smartphoneAsString()
@@ -38,7 +36,7 @@ define([], () => {
     pTag.appendChild(actual);
 
     const div = document.createElement("div")
-    div.className = "table";
+    div.className = data.label.toLowerCase();
     div.appendChild(h1);
     div.appendChild(pTag);
 
