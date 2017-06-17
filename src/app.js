@@ -5,7 +5,7 @@ require([
   return getData(buildCharts);
 
   function getData(callback) {
-    fetch('_fake-server/data.json')
+    fetch('fake-server/data.json')
       .then(response => {
         if (response.ok) {
           return response.json();
