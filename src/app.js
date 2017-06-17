@@ -8,7 +8,9 @@ require(['./models/ChartData'], (ChartData) => {
   function getData(callback) {
     fetch('_fake-server/data.json')
       .then(response => {
-        return response.json();
+        if (response.ok()) {
+          return response.json();
+        }
       }).then(json => {
         callback(json);
       });
@@ -28,6 +30,7 @@ require(['./models/ChartData'], (ChartData) => {
   }
 
   function buildHTML(object) {
+
     const wrapper = document.createElement("div");
     wrapper.className = "wrapper";
 
