@@ -7,6 +7,14 @@ define(['../src/models/ChartData'], (ChartData) => {
     }
   });
 
+  it("can return tablet()", () => {
+    expect(chartData.tablet()).toEqual(120000);
+  });
+
+  it("can return smartphone()", () => {
+    expect(chartData.smartphone()).toEqual(80000);
+  });
+
   it("should have a label all in caps", () => {
     expect(chartData.formattedLabel()).toEqual("TEST");
   });

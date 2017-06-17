@@ -3,24 +3,31 @@ define([], () => {
 
     constructor(data) {
       this.label = data.label;
-      this.tablet = data.sources.tablet;
-      this.smartphone = data.sources.smartphone;
+      this.sources = data.sources
     }
 
     formattedLabel() {
       return this.label.toUpperCase();
     }
 
-    total() {
-      return this.tablet + this.smartphone;
+    tablet() {
+      return this.sources.tablet
     }
 
     tabletPercentage() {
-      return this.percentageOfTotal(this.tablet);
+      return this.percentageOfTotal(this.tablet());
+    }
+
+    smartphone() {
+      return this.sources.smartphone
     }
 
     smartphonePercentage() {
-      return this.percentageOfTotal(this.smartphone);
+      return this.percentageOfTotal(this.smartphone());
+    }
+
+    total() {
+      return this.tablet() + this.smartphone();
     }
 
     percentageOfTotal(source) {
