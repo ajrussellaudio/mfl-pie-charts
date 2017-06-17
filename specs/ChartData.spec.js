@@ -11,7 +11,9 @@ define(['../src/models/ChartData'], (ChartData) => {
     expect(chartData.label).toEqual("TEST");
   });
 
-  it("should have a total from all sources");
+  it("should have a total from all sources", () => {
+    expect(chartData.total()).toEqual(200);
+  });
 
   it("should have a tablet percentage");
 
