@@ -1,9 +1,32 @@
-element {
+:root {
   --revenue-primary-color: #52d123;
   --revenue-secondary-color: #0c6502;
   --impresions-primary-color: #2bc5e2;
   --impresions-secondary-color: #034f63;
-  --views-primary-color: #fbc110;
-  --views-secondary-color: #d95807;
+  --visits-primary-color: #fbc110;
+  --visits-secondary-color: #d95807;
 }
 
+g.revenue > path.tablet {
+  fill: var(--revenue-primary-color);
+}
+
+g.revenue > path.smartphone {
+  fill: var(--revenue-secondary-color);
+}
+
+g.impresions > path.tablet {
+  fill: var(--impresions-primary-color);
+}
+
+g.impresions > path.smartphone {
+  fill: var(--impresions-secondary-color);
+}
+
+g.visits > path.tablet {
+  fill: var(--visits-primary-color);
+}
+
+g.visits > path.smartphone {
+  fill: var(--visits-secondary-color);
+}

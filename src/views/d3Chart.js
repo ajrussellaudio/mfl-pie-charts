@@ -1,12 +1,9 @@
 define([], () => {
-  return (chartData, colors) => {
+  return (chartData) => {
 
     const width = 300,
       height = 300,
       radius = Math.min(width, height) / 2;
-
-    const color = d3.scaleOrdinal()
-      .range(colors);
 
     const arc = d3.arc()
       .outerRadius(radius - 10)
@@ -14,7 +11,7 @@ define([], () => {
 
     const pie = d3.pie()
       .sort(null)
-      .value(d => { return d; });
+      .value(d => { return d.value; });
 
     const svg = d3.select("body").append("svg")
       .attr("width", width)
@@ -23,13 +20,13 @@ define([], () => {
       .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
 
     const g = svg.selectAll(".arc")
-      .data(pie([chartData.smartphone, chartData.tablet]))
+      .data(pie(chartData.data.reverse()))
       .enter()
       .append("g")
-      .attr("class", "arc");
+      .attr("class", "arc " + chartData.label.toLowerCase())
 
     g.append("path")
       .attr("d", arc)
-      .style("fill", d => { return color(d.data); });
+      .attr("class", d => { return d.data.label });
   };
 });

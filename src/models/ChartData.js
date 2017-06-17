@@ -3,7 +3,7 @@ define([], () => {
 
     constructor(data) {
       this.label = data.label;
-      this.sources = data.sources
+      this.data = this.extractData(data.sources)
     }
 
     formattedLabel() {
@@ -11,7 +11,9 @@ define([], () => {
     }
 
     tablet() {
-      return this.sources.tablet
+      return this.data.find(datum => {
+        return datum.label === "tablet"
+      }).value;
     }
 
     tabletPercentage() {
@@ -19,7 +21,9 @@ define([], () => {
     }
 
     smartphone() {
-      return this.sources.smartphone
+      return this.data.find(datum => {
+        return datum.label === "smartphone"
+      }).value;
     }
 
     smartphonePercentage() {
@@ -32,6 +36,15 @@ define([], () => {
 
     percentageOfTotal(source) {
       return (source / this.total()) * 100;
+    }
+
+    extractData(sources) {
+      return Object.keys(sources).map(key => {
+        return {
+          label: key,
+          value: sources[key]
+        }
+      })
     }
 
   }
