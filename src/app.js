@@ -37,16 +37,7 @@ require([
   }
 
   function buildHTML(object) {
-    renderD3chart(object, colors(object));
-  }
-
-  function colors(object) {
-    const colorPairs = {
-      revenue: ["#0c6502", "#52d123"],
-      impresions: ["#034f63", "#2bc5e2"],
-      visits: ["#d95807", "#fbc110"]
-    }
-    return colorPairs[object.label.toLowerCase()]
+    renderD3chart(object);
   }
 
 })
