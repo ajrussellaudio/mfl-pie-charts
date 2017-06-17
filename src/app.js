@@ -34,7 +34,11 @@ require(['./models/ChartData'], (ChartData) => {
     const header = document.createElement("h1");
     header.innerText = object.formattedLabel();
 
+    const pTag = document.createElement("p");
+    pTag.innerText = "Total: " + object.formattedTotal();
+
     wrapper.appendChild(header);
+    wrapper.appendChild(pTag);
     document.body.appendChild(wrapper);
   }
 
