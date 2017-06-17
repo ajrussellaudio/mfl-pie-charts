@@ -4,10 +4,6 @@ require([
   ], (ChartData, renderD3chart) => {
   return getData(buildCharts);
 
-  function logData(data) {
-    console.log(data);
-  }
-
   function getData(callback) {
     fetch('_fake-server/data.json')
       .then(response => {
