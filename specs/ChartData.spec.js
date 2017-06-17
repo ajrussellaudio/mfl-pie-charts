@@ -15,7 +15,11 @@ define(['../src/models/ChartData'], (ChartData) => {
     expect(chartData.total()).toEqual(200);
   });
 
-  it("should have a tablet percentage");
+  it("should have a tablet percentage", () => {
+    expect(chartData.tabletPercentage()).toEqual("60%")
+  });
 
-  it("should have a smartphone percentage");
+  it("should have a smartphone percentage", () => {
+    expect(chartData.smartphonePercentage()).toEqual("40%")
+  });
 })
