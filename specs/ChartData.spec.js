@@ -8,7 +8,7 @@ define(['../src/models/ChartData'], (ChartData) => {
   });
 
   it("should have a label all in caps", () => {
-    expect(chartData.label).toEqual("TEST");
+    expect(chartData.formattedLabel()).toEqual("TEST");
   });
 
   it("should have a total from all sources", () => {

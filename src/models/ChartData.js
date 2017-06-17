@@ -1,10 +1,14 @@
 define([], () => {
   return class ChartData {
-    
+
     constructor(data) {
-      this.label = data.label.toUpperCase();
+      this.label = data.label;
       this.tablet = data.sources.tablet;
       this.smartphone = data.sources.smartphone;
+    }
+
+    formattedLabel() {
+      return this.label.toUpperCase();
     }
 
     total() {
