@@ -1,9 +1,9 @@
 require.config({
   baseUrl: '../specs',
   paths: {
-    'jasmine': ['../test/lib/jasmine'],
-    'jasmine-html': ['../test/lib/jasmine-html'],
-    'jasmine-boot': ['../test/lib/boot'],
+    'jasmine': ['../test/lib/jasmine-2.6.3/jasmine'],
+    'jasmine-html': ['../test/lib/jasmine-2.6.3/jasmine-html'],
+    'jasmine-boot': ['../test/lib/jasmine-2.6.3/boot'],
   },
   shim: {
     'jasmine-html': {
@@ -17,4 +17,5 @@ require.config({
 
 require(['jasmine-boot'], () => {
   // require specs here
+  require(['test.spec'], window.onload)
 })
