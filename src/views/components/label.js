@@ -8,7 +8,7 @@ define([], () => {
 
     const total = svg.append("text")
       .text(chartData.totalAsString())
-      .attr("y", 15)
+      .attr("y", 10)
       .attr("text-anchor", "middle")
       .attr("class", "center total");
   }

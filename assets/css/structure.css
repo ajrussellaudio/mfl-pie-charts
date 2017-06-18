@@ -48,6 +48,7 @@ html, body {
   }
 
   .svg-container {
+    display: block;
     min-width: 80%;
   }
 
