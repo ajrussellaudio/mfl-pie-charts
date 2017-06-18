@@ -105,3 +105,8 @@ g.visits > path.smartphone {
     font-size: 2.5vh;
   }
 }
+
+.tick {
+  stroke: var(--light-text-color);
+  stroke-width: 2;
+}
